@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Column Layout</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="banner">
+        <h1>Supernovae</h1>
+    </div>
+
+    <div id="container">
+        <div id="sidebar">
+            <a href="#" onclick="showContent('topic1', event)">Overview</a>
+            <a href="#" onclick="showContent('topic2', event)">Topic 2</a>
+            <a href="#" onclick="showContent('topic3', event)">Topic 3</a>
+            <!-- Add more topics as needed -->
+        </div>
+
+        <div id="content-container">
+            <div id="content">
+                <div class="topic-content" id="topic1">
+                    <h2>Overview</h2>
+                    <p>This is the content for Topic 1.</p>
+                </div>
+
+                <div class="topic-content" id="topic2">
+                    <h2>Topic 2</h2>
+                    <p>This is the content for Topic 2.</p>
+                </div>
+
+                <div class="topic-content" id="topic3">
+                    <h2>Topic 3</h2>
+                    <p>This is the content for Topic 3.</p>
+                </div>
+                <!-- Add more content for additional topics -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
