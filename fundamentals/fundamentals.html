@@ -136,9 +136,14 @@
                     </p>
 
                     <h2>Distance Modulus</h2>
-                    Having known the apparent and absolute magnitude of a star, we can infer how far it is from us. <br> Use the following calculators to find the distance to any star given its \(m\) and \(M\).
+                    Having known the apparent and absolute magnitude of a star, we can infer how far it is from us. 
+                    <br> 
+                    $$m-M=5\log{\frac{r}{10}}$$
+                    $$r = 10\times10^{(m-M)/5} \text{ pc}$$
+                    <br>
+                    Use the following calculators to find the distance to any star given its \(m\) and \(M\).
                 <h3>r (distance) using m (apparent) and M (absolute) magnitudes</h3>
-                <p>Enter the apparent magnitude \(m\) and absolute magnitude \(m\)</p>
+                <p>Enter the apparent magnitude \(m\) and absolute magnitude \(m\) to calculate \(r\)</p>
 
                 <div class="tooltip">
                     Tip: &#128161;
@@ -154,9 +159,10 @@
                 <br>
                 <label for="m">apparent magnitude \(m\)</label>
                 <input type="number" id="m" style="width: 200px; height: 42px; font-size: large;" placeholder="Enter m" onkeypress="handleEnterKey(event)">
+                <br>
                 <label for="M">absolute magnitude \(M\)</label>
                 <input type="number" id="M" style="width: 200px; height: 42px; font-size: large;" placeholder="Enter M" onkeypress="handleEnterKey(event)">
-                <button onclick="rmM()" style="padding: 12px 12px; font-size: 18px;">Convert</button>
+                <button onclick="rmM()" style="padding: 12px 12px; font-size: 18px;">Calculate distance</button>
                 <p id="result">Distance \(r\) <span id="dist"></span>  </p>
                 </div>
 
