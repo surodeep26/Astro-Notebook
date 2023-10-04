@@ -1,5 +1,5 @@
 function showDefaultTopic() {
-    var defaultTopic = document.getElementById('topic2');
+    var defaultTopic = document.getElementById('topic1');
     if (defaultTopic) {
         defaultTopic.style.display = 'block';
     }
