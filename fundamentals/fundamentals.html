@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+
+    </script>
+    <script src="calculators.js"></script>
+
+
+</head>
+<body>
+    <div id="banner">
+        <h1>Fundamentals</h1>
+    </div>
+
+    <div id="container">
+        <div id="sidebar">
+            <a href="#" onclick="showContent('topic1', event)">Parallax</a>
+            <a href="#" onclick="showContent('topic2', event)">How much light?</a>
+            <a href="#" onclick="showContent('topic3', event)">Topic 3</a>
+            <!-- Add more topics as needed -->
+        </div>
+
+        <div id="content-container">
+            <div id="content">
+                <div class="topic-content" id="topic1">
+                    <h2>Stellar Parallax</h2>
+                    <p>This is a basic and powerful method of finding distances to objects. It uses the knowledge of
+                        easy high-school trigonometry. <br><br>
+                        The scale of our Solar System was first comprehended in 1761 by measuring the distance to Venus.
+                        This was done while it made a rare transit and crossed the disk of the Sun during inferior conjunction.
+                    </p>
+                    <p>
+                        Let's see how this works. <br>
+                        Consider two positions of an oberver observing a star at two different times from two different places as shown in the figure:
+                        <center><img src="images/parllax.png" width="300" style="mix-blend-mode: multiply;"></center>
+                    </p>
+                    <p>
+                        The two positions 1 and 2 are the extreme poisitons of the Earth's orbit around the Sun.
+                        From simple trigonomery, we see that:
+                        $$\tan{\theta} = \frac{r}{d}$$
+                        for small angles \(\theta\) (which is the case for stars which are quite far indeed), \(\tan{\theta}=\theta\) 
+                        $$\theta = \frac{r}{d}$$
+                        This angle is known as the <i>parallax</i> of the star. Naturally, the farther the star, the smaller this angle \(\theta\).
+                        <br>
+                        This is denotes by sometimes by \(p\).
+                        <br>
+                        Having known the parallax of a star, we immediately know the distance \(d\) to the star, since we already know what \(r\) is (it's \(1\text{AU}\)).
+                    </p>
+                    <p>
+                        For example, consider the parallax of the nearest star to us <i>Proxima Centauri</i>. 
+                        It has a parallax of 768 mas.<br>
+                         (Note: mas = milliarcsecond = \(10^{-3}\) arcsecond = \(\frac{1}{3600\times 10^3}\)deg = \(\frac{\pi}{180\times3600\times 10^3}\)radian) <br>
+                         which gives:<br>
+                         \[
+                         \begin{align*}
+                             d & =  \frac{1 \text{ AU}}{768 \text{ mas}\times\frac{\pi}{180\times3600\times 10^3}} \\
+                               & =  268574\text{ AU} \\
+                               & =  4.03\times10^{16}\text{ m} \\
+                               & =  1.3 \text{ pc}
+                         \end{align*}
+                         \]
+                         <br>
+                         The conversion of units can get a bit tedious. For this reason, we have the units of <b><i>parsec</i></b> which
+                         make the converion from the standard unit of mas straightforward.
+                    <h2>parsec (pc)</h2>
+                    1 pc is \(3.086\times 10^{16}\)m. <br>
+                    This arbitrary seeming distance is actually
+                    the distance to a star which has a parallax of exactly 1 arcsecond.
+                    <br>
+                    Therefore, we have a simple conversion to get the distance <i>d</i> to a star as:
+                    $$d = \frac{1}{p}$$
+                    where <i>p</i> is the stellar parallax expressed in arcseconds.
+                    <br>
+                    We see that \(d = \frac{1}{768\times10^{-3}\text{as}} = \frac{1000}{768} \text{pc} = 1.3\) pc
+
+                    </p>
+                    <h2>Parallax to Parsec Converter</h2>
+                        <p>Enter the parallax angle in milliarcseconds (mas) and click the button or press Enter to convert it to parsec.</p>
+                        <label for="parallax">Parallax (mas):</label>
+                        <input type="number" id="parallax" style="width: 200px; height: 42px; font-size: large;" placeholder="Enter parallax in mas" onkeypress="handleEnterKey(event)">
+                        <button onclick="plxconvert()" style="padding: 12px 12px; font-size: 18px;">Convert</button>
+                        <p id="result">Distance to the star is: <span id="distanceValue"></span parsec</p>
+
+                </div>
+
+                <div class="topic-content" id="topic2">
+                    <h2>Luminosity</h2>
+                    <p><b>Luminosity</b> is the intrinsic brightness of an object. It is measured in the units of energy per time or <i>watts</i> (W)</p>
+                    <p>For example, the Sun radiates \(4\times10^{26}\)W. Solar parameters are given special units. This amount of luminosity is called solar luminosity and is denoted by \(L_\odot\). $$L_\odot=4\times10^{26}\text{W}$$</p>
+                    In astronomy, it is common to use cgs units. \(1\text{W} = 10^7\text{erg s}^{-1}\).
+                    $$L_\odot=4\times10^{33}\text{erg s}^{-1}$$
+                    The luminosity of our galaxy is about \(10^{11}L_\odot\)
+                    <h2>Flux</h2>
+
+                    The amount of radiation received by an observer who is at some distance away from the source of luminosity is the <b>flux</b> received by them.
+                    <p>Naturally, this follows an inverse square law (see diagram below).</p>
+                    <center><img src="images/flux.png" width="300" style="mix-blend-mode: multiply;"></center>
+                    Flux and luminosity are hence related according to the following relation $$F=\frac{L}{4\pi r^2}$$
+                    Flux tells us how bright an object appears. The farther we go, the fainter a source appears.
+                    <h2>Apparent & Absolute Magnitudes</h2>
+                    <p>Human eyes are actually designed to percieve brightness logarithmically. It is therefore more convenient to have a logarithmic scale to measure brightness instead of a linear scale.</p>
+                    <p>Hipparchus was a Greek astronomer in second century who catalogued stars visible to the naked eye. He divided stars into 6 categories based on their <b>apparent magnitudes (m)</b>. The apparent magnitude of \(m=1\) would be the brightest and \(m=6\) would be the faintest star.</p>
+                    <p>Astronomers today use a similar scale even today! \(m=6\) is the limit of the naked eye. This is the faintest we can see without any aid. However, today, much fainter stars have been observed with telescopes.</p>
+                    Relation between the flux (brightness) of two objects and their apparent magnitudes is:
+                    $$m_1 -m_2 = 2.5 \log_{10} \frac{F_2}{F_1}$$
+                    This scale is <b>defined</b> in such a way that a brightness difference of 100 corresponds to 5 magnitudes.
+                    <p>So, a star of magnitude 1 is <br>
+                    \(2.512\) times brighter than a star of magnitude 2<br>
+                    \(2.512^2 = 6.3\) times brighter than a star of magnitude 3<br>
+                    \(2.512^3 = 16\) times brighter than a star of magnitude 4<br>
+                    \(2.512^4 = 40\) times brighter than a star of magnitude 5<br>
+                    \(2.512^5 = 100\) times brighter than a star of magnitude 6<br><br>
+                    As expected, the difference of 5 magnitude means a \(100\times\) difference in brightness.
+                    <br><i>Note: Smaller magnitude => brighter object</i> 
+                    <p>Since apparent magnitude is related to the flux received, it does not tell us anything about the true brightness (luminosity). A faint star very close to us could easily appear brighter than a much brighter star which is far-far away.<br>
+                    Wouldn't it be convenient if we could place all the stars on the equal footing?<br>
+                    That's why we define the <b>absolute magnitude (M)</b> of a star.
+                    This is the apparent magnitude of a star when it is placed \(10\) pc away from us.
+                    <br>
+                    This definition makes provides the formula:
+                    $$m-M=2.5 \log{\frac{\frac{L}{4\pi r^2}}{\frac{L}{4\pi 10^2}}}$$
+                        Note: \(r\) is in pc and L dosen't change (it's intrinsic, dosen't depend on the distance). Simplifying,
+                        $$m-M=5\log{\frac{r}{10}}$$
+                    </p>
+                    Here, \(r\) is measured in pc.
+                    <p>The interesting this to note is that this formula can be used to find the absolute magnitude of a source, when its distance is known. Distances can be known using the parallax
+                        of a source which is relatively easy to measure. <br>
+                        Conversely, if we know the absolute magnitude of a source (say it is a known type star), we can get a measure of its distance by simple comparing the apparent and absolute magnitudes using the above formula.
+                    </p>
+
+                    <h2>Distance Modulus</h2>
+                    Having known the apparent and absolute magnitude of a star, we can infer how far it is from us. <br> Use the following calculators to find the distance to any star given its \(m\) and \(M\).
+                <h3>r (distance) using m (apparent) and M (absolute) magnitudes</h3>
+                <p>Enter the apparent magnitude \(m\) and absolute magnitude \(m\)</p>
+
+                <div class="tooltip">
+                    Tip: &#128161;
+                    <span class="tooltiptext">
+                        <!-- <img src="images/flux.png" class="tooltip-image" alt="Tooltip Image"> -->
+                        <div class="tooltip-content">
+                            The apparent magnitude of the Sun is \(m_\odot = -26.74\) and the absolute magnitude is \(M_\odot = 4.83\)
+                            <br>
+                            Try substituting these values in the input fields. You should get 1 AU for the distance &#128521;
+                        </div>
+                    </span>
+                </div>
+                <br>
+                <label for="m">apparent magnitude \(m\)</label>
+                <input type="number" id="m" style="width: 200px; height: 42px; font-size: large;" placeholder="Enter m" onkeypress="handleEnterKey(event)">
+                <label for="M">absolute magnitude \(M\)</label>
+                <input type="number" id="M" style="width: 200px; height: 42px; font-size: large;" placeholder="Enter M" onkeypress="handleEnterKey(event)">
+                <button onclick="rmM()" style="padding: 12px 12px; font-size: 18px;">Convert</button>
+                <p id="result">Distance \(r\) <span id="dist"></span>  </p>
+                </div>
+
+                <div class="topic-content" id="topic3">
+                    <h2>Topic 3</h2>
+                    <p>This is the content for Topic 3.</p>
+                </div>
+                <!-- Add more content for additional topics -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
