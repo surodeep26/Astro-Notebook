@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+
+    </script>
+    <script src="calculators.js"></script>
+
+
+</head>
+<body>
+    <div id="banner">
+        <h1>Fundamentals</h1>
+    </div>
+
+    <div id="container">
+        <div id="sidebar">
+            <a href="fundamentals1.html">Parallax</a>
+            <a href="fundamentals2.html">How much light?</a>
+            <a href="fundamentals3.html">Proper Motion</a>
+            <a href="fundamentals4.html">Coordinate Systems</a>
+        </div>
+
+        <div id="content">
+                    <h2>Stellar Parallax</h2>
+                    <p>This is a basic and powerful method of finding distances to objects. It uses the knowledge of
+                        easy high-school trigonometry. <br><br>
+                        The scale of our Solar System was first comprehended in 1761 by measuring the distance to Venus.
+                        This was done while it made a rare transit and crossed the disk of the Sun during inferior conjunction.
+                    </p>
+                    <p>
+                        Let's see how this works. <br>
+                        Consider two positions of an oberver observing a star at two different times from two different places as shown in the figure:
+                        <center><img src="images/parllax.png" width="300" style="mix-blend-mode: multiply;"></center>
+                    </p>
+                    <p>
+                        The two positions 1 and 2 are the extreme poisitons of the Earth's orbit around the Sun.
+                        From simple trigonomery, we see that:
+                        $$\tan{\theta} = \frac{r}{d}$$
+                        for small angles \(\theta\) (which is the case for stars which are quite far indeed), \(\tan{\theta}=\theta\) 
+                        $$\theta = \frac{r}{d}$$
+                        This angle is known as the <i>parallax</i> of the star. Naturally, the farther the star, the smaller this angle \(\theta\).
+                        <br>
+                        This is denoted by sometimes by \(p\).
+                        <br>
+                        This is the angle that the souce shifts on the sky of the observer when the obeserver moves a distance \(r\)
+                        <br>
+                        Having known the parallax of a star, we immediately know the distance \(d\) to the star, since we already know what \(r\) is (it's \(1\text{AU}\)).
+                    </p>
+                    <p>
+                        For example, consider the parallax of the nearest star to us <i>Proxima Centauri</i>. 
+                        It has a parallax of 768 mas.<br>
+                         (Note: mas = milliarcsecond = \(10^{-3}\) arcsecond = \(\frac{1}{3600\times 10^3}\)deg = \(\frac{\pi}{180\times3600\times 10^3}\)radian) <br>
+                         which gives:<br>
+                         \[
+                         \begin{align*}
+                             d & =  \frac{1 \text{ AU}}{768 \text{ mas}\times\frac{\pi}{180\times3600\times 10^3}} \\
+                               & =  268574\text{ AU} \\
+                               & =  4.03\times10^{16}\text{ m} \\
+                               & =  1.3 \text{ pc}
+                         \end{align*}
+                         \]
+                         <br>
+                         The conversion of units can get a bit tedious. For this reason, we have the units of <b><i>parsec</i></b> which
+                         make the converion from the standard unit of mas straightforward.
+                    <h2>parsec (pc)</h2>
+                    1 pc is \(3.086\times 10^{16}\)m. <br>
+                    This arbitrary seeming distance is actually
+                    the distance to a star which has a parallax of exactly 1 arcsecond.
+                    <br>
+                    Therefore, we have a simple conversion to get the distance <i>d</i> to a star as:
+                    $$d = \frac{1}{p}$$
+                    where <i>p</i> is the stellar parallax expressed in arcseconds.
+                    <br>
+                    We see that \(d = \frac{1}{768\times10^{-3}\text{as}} = \frac{1000}{768} \text{pc} = 1.3\) pc
+
+                    </p>
+                    <h2 id="plxcalculator">Parallax to Parsec Converter</h2>
+                        <p>Enter the parallax angle in milliarcseconds (mas) and click the button or press Enter to convert it to parsec.</p>
+                        <label for="parallax">Parallax (mas):</label>
+                        <input type="number" id="parallax" style="width: 200px; height: 42px; font-size: large;" placeholder="Enter parallax in mas" onkeypress="handleEnterKey(event)">
+                        <button onclick="plxconvert()" style="padding: 12px 12px; font-size: 18px;">Convert</button>
+                        <p id="result">Distance to the star is: <span id="distanceValue"></span parsec</p>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+body {
+    background-color: #282828;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+}
+
+.example-box{    
+    border: 1px solid #000;
+    padding: 20px;
+    margin: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: auto; /* Clear the float */
+
+}
+
+
+.example-text {
+    width: 65%; /* Adjust the width as needed */
+    float: left;
+}
+
+.example-image {
+    width: 30%; /* Adjust the width as needed */
+    float: right;
+
+}
+
+.tooltip-image {
+    float: left;
+    margin-right: 10px;
+    max-height: auto; /* Adjust the height as needed */
+    border-radius: 6px;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    
+    visibility: hidden;
+    width: 290px;
+    background-color: rgb(94, 74, 9);
+    color: #fff;
+    text-align: left;
+    border-radius: 6px;
+    padding: 10px ;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  .tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 20%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(94, 74, 9) transparent transparent transparent;
+  }
+#banner {
+    background-color: rgb(128, 101, 28);
+    /* background-image: url(images/snr147.jpg); */
+    background-position: cover;
+    background-position: 0rem; 
+    background-position-x: 8em;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    text-align: center;
+    font-family: "Press Start 2P";
+    font-size: 2.5ch;
+}
+
+#container {
+    display: flex;
+    flex-grow: 1;
+}
+
+#sidebar {
+    width: 10%;
+    min-width: 200px; /* Add a minimum width to prevent expanding */
+    background-color: #282828;
+    padding: 20px;
+    height: 100%;
+}
+
+
+#content {
+    /* You can add styles specific to the content here */
+    flex-grow: 1;
+    padding: 20px;
+    background-color: rgb(255, 250, 243);
+    font-size: 2ch;
+    font-family: 'Libre Baskerville', serif;
+}
+
+#content h2{
+    font-size: 3ch;
+    font-style: italic;
+    font-family: 'Libre Baskerville', serif;
+}
+
+#sidebar a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'consolas';
+    font-size: 2.5ch;
+}
+
+#sidebar a:hover {
+    background-color: #008192;
+}

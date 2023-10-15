@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+
+    </script>
+    <script src="calculators.js"></script>
+
+
+</head>
+<body>
+    <div id="banner">
+        <h1>Fundamentals</h1>
+    </div>
+
+    <div id="container">
+        <div id="sidebar">
+            <a href="fundamentals1.html">Parallax</a>
+            <a href="fundamentals2.html">How much light?</a>
+            <a href="fundamentals3.html">Proper Motion</a>
+            <a href="fundamentals4.html">Coordinate Systems</a>
+        </div>
+
+        <div id="content">
+                    <h2>Proper Motion</h2>
+                    <p>All celestal objects move relative to each other. In addition, the Earth itself has its own motion. As a result, objects change their positions on the night sky. <br>
+                    Objects which are closer like the Sun, Moon, planets in our solar system, commets etc. appear to move more noticeably. Star, galaxies etc. also do move, but their motion is not as apparent.
+                    <br>
+                    If we photograph the same area of the night sky over several years, we would find barely any differences in the positions of the stars.
+                    <br>
+                    These minute differences are however detectable by space-based telescopes such as Gaia.
+                    
+                    <p>The following GIF shows the positions of the stars in the famous Orion constellation over several thousand years.</p>
+                    <center>
+                    <br>
+                    <a title="Tony873004, CC BY-SA 4.0 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:OrionProper.gif"><img width="400" alt="OrionProper" src="https://upload.wikimedia.org/wikipedia/commons/6/6e/OrionProper.gif"></a>
+                    <br><a href="https://commons.wikimedia.org/wiki/File:OrionProper.gif">Tony873004</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons</center>
+                    </p>
+                    <h2>Star's Velocities</h2>
+                    The 3D motion of a star in space can be resolved into two parts by an observer on Earth:
+                    <ul>
+                        <div class="tooltip">
+                            <li><b>Radial Motion</b>
+                            <span class="tooltiptext">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Proper_motion.svg/250px-Proper_motion.svg.png" class="tooltip-image" alt="Tooltip Image" width="100%" style="background-color: white;"><br>
+
+                            </span>
+                        </div>
+                        which is along the line of sight of the observer (Towards or away from the observer).
+                        <br>This motion can be observed by measuring the shifts in the spectral lines of the star. Spectral lines shift towards red if the motion of the star 
+                        is away from the observer, and towards blue if the motion is away from the observer. This shift is called the <i>Doppler Shift</i>.
+                        </li>
+                        <br>
+                        <div class="tooltip">
+                            <li><b>Proper Motion</b>
+                            <span class="tooltiptext">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Proper_motion.svg/250px-Proper_motion.svg.png" class="tooltip-image" alt="Tooltip Image" width="100%" style="background-color: white;"><br>
+
+                            </span>
+                        </div> which is the 2D motion that is observed on the plane of the night sky. This is measured in angular units.</li>
+                        This motion is very slow and is measured usually over an interval of 20-30 years. It is expressed in arc seconds per year by the symbol \(\mu\).
+                        $$\mu = \frac{v_\theta}{r}$$ where \(v_\theta\) is the transverse velocity and \(r\) is the distance to the star.
+                        <br> In these units, we have a useful relation for calculating the transverse velocity of stars:
+                        $$v_\theta = 4.74 \mu r \text{  km/s}$$
+                        Where \(v_\theta\) is in km/s, \(\mu\) is in arc seconds, and \(r\) is in parsec.
+                        <br>With \(v_\theta\) and \(v_r\) known, we have the 3D velocity of the star:
+                        $$v = \sqrt{v_\theta^2+v_r^2}$$
+                    </ul>
+                    <div class="example-box">
+                        <div class="example-text">
+                            <b><i>Example:</i></b>
+                            The Barnard's star has the highest proper motion of all the known stars in the night sky.
+                            <br>Find its 3D space velocity. You'll need its proper motion and distance. 
+                            <br>
+                            Deatails about the star can be found on <a href="http://simbad.cds.unistra.fr/simbad/sim-basic?Ident=barnard%27s+star&submit=SIMBAD+search"> SIMBAD</a>.
+                        <br><br>
+                        <b><i>Solution:</i></b>
+                            <p>We see that two proper motion values are mentioned on the page. 
+                                These are the proper motions along the 
+                                <i>right ascension</i> \(\mu_{\alpha}^* = -801.551 \text{ mas}\) and along <i>declination</i>
+                                \(\mu_{\delta}=10362.394 \text{ mas}\) </p>
+                            <p>RA increases towards West <br> DE increases towards North</p>
+                            <p>So, positive\(\mu_{\alpha}^*\) indicates motion towards West. Here it is negative so the star moves to the East (right).</p>
+                            <p>Positive \(\mu_{\delta}\) indicates motion towards North. Here it is positive and hence the star moves to the North (upwards).</p>
+                            Using these, we find the proper motion as: 
+                            \[
+                            \begin{align*}
+                              \mu & = \sqrt{\mu_{\alpha}^{*2}+\mu_{\delta}^2} \\
+                                  & =  \sqrt{-801.551^{2}+10362.394^2} \text{ mas} \\
+                                  & =  10393.35 \text{ mas} \\
+                                  & =  10.393 \text{ as} \\
+                            \end{align*}
+                            \]
+
+                            We also have data on the parallax which gives us the distance. \(p=546.9759 \text{ mas}\). 
+                            We can use our <a href="fundamentals1.html#plxcalculator">calculator</a> to find that distance to the star \(r = 1.828 \text{ pc}\)
+                            <br>
+                            Now we use calculate the transverse velocity \(v_\theta\) as:
+                            \[
+                            \begin{align*}
+                            v_\theta &= 4.74 \mu r \text{  km/s} \\
+                            &= 4.74\times 10.393 \times 1.828 \text{  km/s} \\
+                            &= 90.05 \text{  km/s}
+                            \end{align*}
+                            \]
+
+                            Now, for the 3D space velocity, we get the radial velocity \(v_r = -110.11 \text{ km/s}\) from <a href="http://simbad.cds.unistra.fr/simbad/sim-basic?Ident=barnard%27s+star&submit=SIMBAD+search"> SIMBAD</a>:
+                            (negative sign indicating a motion towards us)
+                            \[
+                            \begin{align*}
+                            v &= \sqrt{v_\theta^2+v_r^2} \\
+                            &= \sqrt{(90.05)^2+(-110.11)^2} \text{  km/s} \\
+                            &= 142.24 \text{  km/s} \\
+                            \end{align*}
+                            \]
+
+
+                        </div>
+                        <div class="example-image">
+                            <a title="Image: The proper motion of Barnard’s Star over the last 9 years. (Credit: RickJ)" href="https://href.li/?http://cosmoquest.org/forum/showthread.php?158025-9-Years-in-the-Making">
+                                <img src="images/barnard.webp" width="100%">
+                            </a>
+                            Barnard's Star's proper motion from 2007 to 2015 <br> credit:
+                            <a href="https://href.li/?http://cosmoquest.org/forum/showthread.php?158025-9-Years-in-the-Making">RickJ</a>
+                            <br>
+                            Towards the top is North and towards right is East.
+                        </div>
+                    </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
