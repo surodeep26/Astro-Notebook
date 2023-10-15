@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Interstellar Medium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+
+    </script>
+    <script src="calculators.js"></script>
+
+
+</head>
+<body>
+    <div id="banner">
+        <h1>The Interstellar Medium</h1>
+    </div>
+
+    <div id="container">
+        <div id="sidebar">
+            <a href="TheInterstellarMedium1.html">1 Introduction</a>
+            <a href="TheInterstellarMedium2.html">2 Interstellar Dust</a>
+            <a href="TheInterstellarMedium3.html">3 Interstellar Gas</a>
+            <a href="TheInterstellarMedium4.html">4 Interstellar Molecules</a>
+            <a href="TheInterstellarMedium5.html">5 Formation of Protostars</a>
+            <a href="TheInterstellarMedium6.html">6 Planetary Nebulae</a>
+            <a href="TheInterstellarMedium7.html">7 Supernova Remnants</a>
+            <a href="TheInterstellarMedium8.html">8 Hot Corona of the Milky Way</a>
+            <a href="TheInterstellarMedium9.html">9 Cosmic Rays and the Interstellar Magnetic Field</a>
+            <a href="TheInterstellarMedium10.html">10 Examples</a>
+            <a href="ARadiativeTransfer.html">Appendix: Radiative Transfer</a>
+
+        </div>
+
+        <div id="content">
+            <h2>Introduction</h2>
+            <p>The space is filled with gas (~99%) and dust(~1%). This is known as the <b>interstellar medium</b> ISM. Stars are formed from this material if it is massive and gets dense enough. This gas and dust is present in the form of diffuse clouds. About 10% of the mass of the Milky Way consists of interstellar gas. This gas is mostly concentrated in the galactic plane in the spiral arms. The size of the dust particles is smaller than the dust found on Earth.</p>
+            Observations of the ISM are made in <div class="tooltip">
+                <i>radio</i>
+                <span class="tooltiptext">
+                    Longest wavelength of the em spectrum: \(\lambda = \) 1mm to 100km
+                </span>
+            </div> 
+            and <div class="tooltip">
+                <i>infrared</i>
+                <span class="tooltiptext">
+                    Just longer than visible: \(\lambda = \) 780 nm and 1 mm
+                </span>
+                </div> wavelengths.
+            This is because the peak of the emissions from the ISM lies in these wavelengths. We will see later why.
+            <h2>First Evidence for ISM</h2>
+            In 1930, <i>Robert Trumpler</i> published his work on the space distribution of open star clusters. He calculated the distances to the clusters from the apparent magnitude and the absolute magnitude using the formula below: <br>(This method to determine distances was discussed <a href="../fundamentals/fundamentals2.html#DistanceModulus">here</a>.<br>
+
+            <!-- <div class="tooltip">
+                <a href="../fundamentals/fundamentals2.html#DistanceModulus">here</a><br>
+                <span class="tooltipiframe">
+                    <iframe src="../fundamentals/fundamentals2.html#DistanceModulus" frameborder="50" width="800" height="700" style="border-radius: 20px;"></iframe>
+                </span>
+            </div>
+            ). -->
+            $$m-M=5\log{\frac{r}{10 \text{ pc}}}$$
+            <p>With the distance \(r\) to a cluster known, he could calculate the diameter \(D\) from the angular diameter \(d\) as: $$D = r\times d$$</p>
+            <p>It appeared during the search that the clusters which are farther seemed to systematically have a larger diameter. This couldn't be true.</p>
+            <p>The explaination led to a solid observational evidence for the interstellar medium. <br> When light from the clusters reaches us, it passes through a lot of interstellar medium which <div class="tooltip">absorbs<span class="tooltiptext">Radiant energy (light) is absorbed and is transformed into heat. This heat causes re-radiation in the infrared</span></div> and <div class="tooltip">scatters<span class="tooltiptext">The path of light is changed, making less photons being able to reach the observer.</span></div> the light and therefore dosen't let all of the original light reach us. The clusters appear dimmer than they should. That is, their apparent magnitude is dimmer (then \(m\) is a bigger number). This leads to an overestimation for the distance \(r\), since  greater inverse sqaure loss is assumed for the calculation when in reality the loss is due to absorption by ISM and not distance.</p>
+            <p>A bigger distance \(r\) gives a bigger diameter \(D\) and hence the systematic variation. A farther cluster suffers from more absorption (as more of the ISM in in the way), greater dimming and so greater distance estimation from the method. </p>
+            <p>This calls for a modification to the formula: $$m-M=5\log{\frac{r}{10 \text{ pc}}+A}$$</p>
+            where \(A\ge0\) is the extinction in magnitudes due to the ISM.
+            <p>This extinction \(A\) increases linearly with distance $$A = a\times r$$ here \(a\) is a constant. The average value for the extinciton is 2 mag/kpc, meaning that for every kiloparsec of distance, the magnitude is reduced by 2 magnitudes due to extinciton.</p>
+            More on extinction in the next chapter.
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

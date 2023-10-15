@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Interstellar Medium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+
+    </script>
+    <script src="calculators.js"></script>
+
+
+</head>
+<body>
+    <div id="banner">
+        <h1>The Interstellar Medium</h1>
+    </div>
+
+    <div id="container">
+        <div id="sidebar">
+            <a href="TheInterstellarMedium1.html">1 Introduction</a>
+            <a href="TheInterstellarMedium2.html">2 Interstellar Extinction</a>
+            <a href="TheInterstellarMedium3.html">3 Interstellar Gas</a>
+            <a href="TheInterstellarMedium4.html">4 Interstellar Molecules</a>
+            <a href="TheInterstellarMedium5.html">5 Formation of Protostars</a>
+            <a href="TheInterstellarMedium6.html">6 Planetary Nebulae</a>
+            <a href="TheInterstellarMedium7.html">7 Supernova Remnants</a>
+            <a href="TheInterstellarMedium8.html">8 Hot Corona of the Milky Way</a>
+            <a href="TheInterstellarMedium9.html">9 Cosmic Rays and the Interstellar Magnetic Field</a>
+            <a href="TheInterstellarMedium10.html">10 Examples</a>
+            <a href="ARadiativeTransfer.html">Appendix: Radiative Transfer</a>
+
+        </div>
+
+        <div id="content">
+            <h2>Interstellar Extinction</h2>
+            We often see dark bands in pictures taken of the Milky Way such as these: <br><br>
+            <figure>
+                <a title="ESO, CC BY 4.0 &lt;https://creativecommons.org/licenses/by/4.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:The_dark_nebula_LDN_483.jpg"><img width="512" alt="The dark nebula LDN 483" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/The_dark_nebula_LDN_483.jpg/512px-The_dark_nebula_LDN_483.jpg"></a>
+                <figcaption>
+                    <a href="https://commons.wikimedia.org/wiki/File:The_dark_nebula_LDN_483.jpg">ESO</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons
+                </figcaption>
+            </figure>
+            <br>
+                It was earlier speculated that these regions are devoid of stars. This would be quite strange it it were true. An explanation for this was to be found soon enough. 
+                <p>These dark regions are caused by the presence of dust in the path of the light. This is called <b><i>extinction.</i></b></p>
+
+                These are called <i>dark nebulae</i>. Another famous example of such a dark nebula is the
+                <div class="tooltip">
+                    <i>Horsehead Nebula</i>
+                    <span class="tooltiptext">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Barnard_33.jpg/375px-Barnard_33.jpg">
+                    </span>
+                </div>
+
+                Even though it may appear dark in visible light, we can see the same in 
+                <div class="tooltip">
+                    <i>infrared</i>
+                    <span class="tooltiptext">
+                        <img src="https://stsci-opo.org/STScI-01EVVCMJ6D0B2GZ335X29D6B83.jpg">
+                    </span>
+                </div>
+                
+                light (captured by the Hubble Space telescope) to see the presence of dust clearly. Dust emits light in infrared.
+                <p>
+                    When these dust clouds are present near stars, they scatter and reflect the light form the stars and appear bright. These are known as <i>reflection nebulae</i>. </p>The
+                    <div class="tooltip">
+                        <i>Witch Head reflection nebula</i>
+                        <span class="tooltiptext">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Reflection.nebula.arp.750pix.jpg">
+                            The Witch Head reflection nebula (IC2118) is about 900ly from us.It reflects the light from the bright star Rigel in the Orion constellation. Dust in the nebula reflects and scatters the light from Rigel. <br>
+                            It appears blue because <br>
+                            1. The blue light from Rigel (B8 type) and <br>2. Fine dust reflects blue more efficiently than red.
+                        </span>
+                    </div>
+                    is one such example. Dust clouds reflect shorter wavelengths and transmit longer wavelengths. This is why reflection nebulae appear blue and dark nebulae and stars behind the dust clouds appear red. This is known as <i>interstellar redenning</i>.
+                
+                    <p>
+                        Dust blocks light and we quantified this using the modified formula for the apparent magnitude by including the extinction \(A\) .
+                        $$m-M=5\log{\frac{r}{10 \text{ pc}}+A}$$
+                        Remember that:
+                        <li>\(m\) is the apparent magnitude</li>
+                        <li>\(M\) is the absolute magnitude</li>
+                        <li>\(r\) is the distance to the source in parsec</li>
+                    </p>
+                    <p>Extinction \(A\) itself depends on the distance to the source. The greater the distance, the more ISM the light would have to travel through. We saw that $$A = a\times r$$ and that \(a = 2 \text{ mag/kpc}\) </p>
+                <p>The value of this extinction \(A\) also depends on the wavelength of light \(A=A(\lambda)\). Generally, due to the properties of the generic ISM, UV is absorbed more by it and hence there is an excess of absorption in the UV wavelength. See, the graph below: <br>
+            <figure>
+                <a title="Karl D. Gordon, CC BY-SA 3.0 &lt;http://creativecommons.org/licenses/by-sa/3.0/&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Interstellar_extinction_ave_curves_local_group.png"><img width="512" alt="Interstellar extinction ave curves local group" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Interstellar_extinction_ave_curves_local_group.png/512px-Interstellar_extinction_ave_curves_local_group.png"></a>
+                <figcaption>
+                    <a href="https://commons.wikimedia.org/wiki/File:Interstellar_extinction_ave_curves_local_group.png">Karl D. Gordon</a>, <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>, via Wikimedia Commons
+                    <br>
+                    Plot showing the average extinction curves for the MW, LMC2, LMC, and SMC Bar. The curves are plotted versus \(1/\lambda\) to emphasize the UV at 217.5 nm.
+                </figcaption>
+            </figure>
+
+                    
+                    
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
