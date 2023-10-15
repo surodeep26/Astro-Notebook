@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Relativity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+
+    </script>
+    <script src="calculators.js"></script>
+
+
+</head>
+<body>
+    <div id="banner">
+        <h1>General Relativity</h1>
+    </div>
+
+    <div id="container">
+        <div id="sidebar">
+            <a href="Introduction.html">1 Introduction</a>
+            <a href="CoordinateSystems.html">2 Coordinate Systems</a>
+
+
+
+        </div>
+
+        <div id="content">
+            <h2>Special Relativity</h2>
+            In order to start learning General Relativity, we must first start with special relativity. We will brush up a few concepts and introduce a standard notation. 
+            <br>
+            This is supposed to be a no-nonsense course. Meaning, we will discuss stuff to the point. No more than needed, and no less, as Einstein himself would have preferred. If you need to look further into the mathematical concepts, please read Wald. I would not go into too much details of manifolds or differential geometry. Only what's necessary at a graduate level for an astrophycist. If one might argue that's not the best approach. That's fine. I won't argue back.
+            <h3>Postulates of Special Relativity</h3>
+            <li>The speed of light \(c\approx3\times10^8 \text{m/s}\) is constant for all inertial reference frames.
+            <li>The laws of nature are the same in all reference frames.
+            <br>
+            An <b> inertial reference frame</b> is one which is non-accelerating.
+            </li>
+
+            <h2>Galelian Transformation</h2>
+            We will discuss the relationship between space coordinates and time and how the speed of light being a constant (and not \(\infty\) leads to concepts like time-dilation and length-contraction etc.
+            <br>
+            Consider two reference frames, say, \(S\) and \(S'\). Consider \(S'\) is moving in the \(x'\) (or \(x\)) direction with a velocity \(v\). These are inertial frames as they move with respect to each other with a constant velocity (\(v\)) but with 0 acceleration.
+            <br>
+            Coordinates in \(S\): \((t,x,y,z)\)
+            <br>
+            Coordinates in \(S'\): \((t',x',y',z')\)
+            <br>
+            In Newtonian physics, we use <b>Galelian transformation</b> to translate \(S\) coordinates into \(S'\): <br>
+            \[
+            \begin{align*}
+            t' &= t \\
+            x' &= x-vt \\
+            y' &= y \\
+            z' &= z \\
+            
+            \end{align*}
+            \]
+
+            And <b> inverse Galelian transformation</b> to go the other way 
+            <div class="tooltip">
+                <span class="tooltiptext">
+                    \[
+                    \begin{align*}
+                    t &= t' \\
+                    x &= x'+vt' \\
+                    y &= y' \\
+                    z &= z' \\            
+                    \end{align*}
+                    \]
+                </span>
+                (simply rearranging the terms).
+            </div>
+            
+            <p>
+                These four equations can be condensed into one matrix equation:
+                $$\left[\begin{matrix}t'\\x'\end{matrix}\right] = \left[\begin{matrix}1 & 0\\- v & 1\end{matrix}\right] \left[\begin{matrix}t\\x\end{matrix}\right]$$
+            </p>
+            <p>
+                We can call this matrix on the RHS the Galelian transformation matrix \(G =\left[\begin{matrix}1 & 0\\- v & 1\end{matrix}\right]                \) <br>
+                We can have the inverse of this matrix to go from \(S'\) coordinates to \(S\) coordinates. This is the inverse Galelian transformation matrix:
+                \(G^{-1} = \left[\begin{matrix}1 & 0\\v & 1\end{matrix}\right]                \)
+                <br>
+                This inverse transformation equation would thus be:
+                $$\left[\begin{matrix}t\\x\end{matrix}\right] = \left[\begin{matrix}1 & 0\\v & 1\end{matrix}\right] \left[\begin{matrix}t'\\x'\end{matrix}\right]$$
+            </p>
+                This contains the <div class="tooltip">
+                    <span class="tooltiptext">
+                        \[
+                        \begin{align*}
+                        x &= x'+vt \\
+                        y &= y' \\
+                        z &= z' \\
+                        t &= t'
+                        \end{align*}
+                        \]
+                    </span>
+                    inverse transformation equations.
+                </div>
+                <p><i><b>Note:</b> Galelian transformation assumes absolute time: \(t=t'\). This is not the case in reality.</i></p>
+            <p>
+                <h2>Lorentz Transformation</h2>
+            But these contradict the first postulate: If a photon moves at velocity \(c\) in \(S\) then 
+            the velocity for that object in \(S'\) would be \(c-v\). Or if it moves with \(c\) in \(S'\) then it would move with \(c+v\) in \(S\). But light should not change speeds in different inertial frames. 
+            </p>
+            To be consistent witht the postulates of special relativity, we introduce a new set of transformations. 
+            This is <b>Lorentz Transformation</b>. These transformations do not assume absolute time. We can derive it quite easily, we skip the derivation here. If you're interested, check out <a href="https://en.wikipedia.org/wiki/Derivations_of_the_Lorentz_transformations#Using_the_principle_of_relativity">wikipedia.</a> <br>
+
+           <br>
+           We will present the result here. In fact, the most general one in which one frame is moving with a constant velocity with respect to the other in an arbitrary direction.
+           $$L = \left[\begin{matrix}\gamma & - \beta_{x} \gamma & - \beta_{y} \gamma & - \beta_{z} \gamma\\- \beta_{x} \gamma & 1 + \frac{\beta_{x}^{2} \left(\gamma - 1\right)}{\beta^{2}} & \frac{\beta_{x} \beta_{y} \left(\gamma - 1\right)}{\beta^{2}} & \frac{\beta_{x} \beta_{z} \left(\gamma - 1\right)}{\beta^{2}}\\- \beta_{y} \gamma & \frac{\beta_{x} \beta_{y} \left(\gamma - 1\right)}{\beta^{2}} & 1 + \frac{\beta_{y}^{2} \left(\gamma - 1\right)}{\beta^{2}} & \frac{\beta_{y} \beta_{z} \left(\gamma - 1\right)}{\beta^{2}}\\- \beta_{z} \gamma & \frac{\beta_{x} \beta_{z} \left(\gamma - 1\right)}{\beta^{2}} & \frac{\beta_{y} \beta_{z} \left(\gamma - 1\right)}{\beta^{2}} & 1 + \frac{\beta_{z}^{2} \left(\gamma - 1\right)}{\beta^{2}}\end{matrix}\right]$$
+            Let's define the symbols used here:
+            <ul>
+                <li>\(v = \sqrt{v_x^2+v_y^2+v_z^2}\) is the velocity of the moving \(S'\) frame.</li><br>
+                <li>\(\gamma = \frac{1}{\sqrt{1-v^2/c^2}}\)</li><br>
+                <li>\(\beta_i = \frac{v_i}{c}\) where \(i\) is \(x,y,z\). Naturally, \(\beta = \sqrt{\beta_x^2+\beta_y^2+\beta_z^2}\)</li><br>
+            </ul>
+            <p>
+                This leads to the follwing Lorentz transformation equations to convert between the coordinates of \(S\) to \(S'\):
+                $$\left[\begin{matrix}t'\\x'\\y'\\z'\end{matrix}\right] = \left[\begin{matrix}\gamma & - \beta_{x} \gamma & - \beta_{y} \gamma & - \beta_{z} \gamma\\- \beta_{x} \gamma & 1 + \frac{\beta_{x}^{2} \left(\gamma - 1\right)}{\beta^{2}} & \frac{\beta_{x} \beta_{y} \left(\gamma - 1\right)}{\beta^{2}} & \frac{\beta_{x} \beta_{z} \left(\gamma - 1\right)}{\beta^{2}}\\- \beta_{y} \gamma & \frac{\beta_{x} \beta_{y} \left(\gamma - 1\right)}{\beta^{2}} & 1 + \frac{\beta_{y}^{2} \left(\gamma - 1\right)}{\beta^{2}} & \frac{\beta_{y} \beta_{z} \left(\gamma - 1\right)}{\beta^{2}}\\- \beta_{z} \gamma & \frac{\beta_{x} \beta_{z} \left(\gamma - 1\right)}{\beta^{2}} & \frac{\beta_{y} \beta_{z} \left(\gamma - 1\right)}{\beta^{2}} & 1 + \frac{\beta_{z}^{2} \left(\gamma - 1\right)}{\beta^{2}}\end{matrix}\right]\left[\begin{matrix}t\\x\\y\\z\end{matrix}\right]$$
+            </p>
+            This matrix is simplified when the velocity is only in the \(x\) direction \(\beta_y=0,\beta_z=0,\beta_x=\beta\):
+            $$L = \left[\begin{matrix}\gamma & - \beta \gamma & 0 & 0\\- \beta \gamma & \gamma & 0 & 0\\0 & 0 & 1 & 0\\0 & 0 & 0 & 1\end{matrix}\right]$$
+            This leads to the equations for transformation:
+            $$\left[\begin{matrix}t'\\x'\\y'\\z'\end{matrix}\right] = \left[\begin{matrix}\gamma & - \beta \gamma & 0 & 0\\- \beta \gamma & \gamma & 0 & 0\\0 & 0 & 1 & 0\\0 & 0 & 0 & 1\end{matrix}\right]\left[\begin{matrix}t\\x\\y\\z\end{matrix}\right]$$
+            
+
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>

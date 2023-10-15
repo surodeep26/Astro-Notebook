@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>General Relativity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+
+    </script>
+    <script src="calculators.js"></script>
+
+
+</head>
+<body>
+    <div id="banner">
+        <h1>General Relativity</h1>
+    </div>
+
+    <div id="container">
+        <div id="sidebar">
+            <a href="Introduction.html">1 Introduction</a>
+            <a href="CoordinateSystems.html">2 Coordinate Systems</a>
+
+        </div>
+
+        <div id="content">
+            <h2>Coordinate Systems</h2>
+            The second postulate of special relativity is that physical systems must remain invariant of the
+            coordinate systems used to describe them. This is what we emphasise in this chapter. 
+            We will consider the mathematical tools to required to study relativity.
+            <h2>Euclidean/Flat Geometry</h2>
+            Let's first consider the cartesian coordiantes \((x,y,z)\). One might come up with another system of coordinates say \((u,v,w)\).
+            Before trying to talk to our \((u,v,w)\) coordiante friends about any physical system, we must know how to convert between the two coordinates.
+            <br>
+            An example could be \((u,v,w) = (r, \theta, \phi)\), the spherical coordinates.
+            <br>
+            then, we can convert as:
+            \[
+            \begin{align*}  
+            x &= r\sin{\theta}\cos{\phi}\\ 
+            y &= r\sin{\theta}\sin{\phi}\\
+            z &= r\cos{\theta} \\
+            \end{align*}    
+                \]
+            where \(r \ge 0\) and \(0 \le \theta \le 2\pi\) and \(0 \le \phi \le \pi\)
+            <h3>Basis Vectors: Tangent Basis</h3>
+            If we have any vector \(\vec{r} = x(u,v,w)\hat{i}+y(u,v,w)\hat{j}+z(u,v,w)\hat{k}\) in a coordinate system \((u,v,w)\), then we define the unit vectors in such a coordinate system as:
+            \[
+            \begin{align*}  
+            \vec{e}_u &= \frac{\partial{\vec{r}}}{\partial{u}} =\partial_r{\vec{r}}\\
+            \vec{e}_v &= \frac{\partial{\vec{r}}}{\partial{v}} =\partial_{\theta}{\vec{r}} \\
+            \vec{e}_w &= \frac{\partial{\vec{r}}}{\partial{w}} =\partial_{\phi}{\vec{r}} \\
+            \end{align*}    
+            ,    \]
+            Let's take the same example of the spherical coordinates where \((u,v,w)=(r,\theta,\phi)\).
+            <br>
+            So, a general position vector \(\vec{r}\)  becomes \(\vec{r} =(r\sin{\theta}\cos{\phi}) \hat{i}+(r\sin{\theta}\sin{\phi})\hat{j}+(r\cos{\theta})\hat{k}\)
+            <br>
+            We prefer to write in the vector form:
+            $$\vec{r}=\left[\begin{matrix}r \sin{\left(\theta \right)} \cos{\left(\phi \right)}\\r \sin{\left(\phi \right)} \sin{\left(\theta \right)}\\r \cos{\left(\theta \right)}\end{matrix}\right]$$
+            Now, we apply the above equations to find the basis vectors in the spherical coordiante system.          
+            \[
+            \begin{align*}  
+            \vec{e}_r &= \frac{\partial{\vec{r}}}{\partial{r}} \\
+            \vec{e}_\theta &= \frac{\partial{\vec{r}}}{\partial{\theta}} \\
+            \vec{e}_\phi &= \frac{\partial{\vec{r}}}{\partial{\phi}} \\
+
+            \end{align*}    
+                \]
+
+            We can do this by hand like a caveman, or use SymPy:
+            <h3 style="color: rgb(43, 142, 255);">Using SymPy</h3>
+
+            <center>
+            <iframe src="1smp.html"></iframe>
+        </center>
+    So, we have the basis vectors:
+    \[
+    \begin{align*}  
+    \vec{e}_r &= \frac{\partial{\vec{r}}}{\partial{r}}=\left[\begin{matrix}\sin{\left(\theta \right)} \cos{\left(\phi \right)}\\\sin{\left(\phi \right)} \sin{\left(\theta \right)}\\\cos{\left(\theta \right)}\end{matrix}\right]\\
+    \vec{e}_\theta &= \frac{\partial{\vec{r}}}{\partial{\theta}}=\left[\begin{matrix}r \cos{\left(\phi \right)} \cos{\left(\theta \right)}\\r \sin{\left(\phi \right)} \cos{\left(\theta \right)}\\- r \sin{\left(\theta \right)}\end{matrix}\right]\\
+    \vec{e}_\phi &=\frac{\partial{\vec{r}}}{\partial{\phi}}=\left[\begin{matrix}- r \sin{\left(\phi \right)} \sin{\left(\theta \right)}\\r \sin{\left(\theta \right)} \cos{\left(\phi \right)}\\0\end{matrix}\right]\\
+
+    \end{align*}    
+        \]    
+    
+    These basis vectors are orthogonal to each other \(\vec{e}_i \cdot \vec{e}_j = 0\) if \(i \ne j\).
+    <br>
+    We may verify this in SymPy:
+
+    <center>
+        <iframe src="2smp.html" style="height: 200px;"></iframe>
+    </center>
+    <br><br>
+    However, these do not form an orthonormal basis as the basis vectors don't have \(|\vec{e}_i|=\sqrt{|\vec{e}_i\cdot\vec{e}_i|}=1\):
+    <br><br>
+
+    <center>
+        <iframe src="3smp.html" style="height: 200px;"></iframe>
+    </center>
+    
+    <br><br>
+    We can divide the basis vectors by their norm to finally have an orthonormal basis:
+    \[
+    \begin{align*}  
+    \vec{e}_r&=\left[\begin{matrix}\sin{\left(\theta \right)} \cos{\left(\phi \right)}\\\sin{\left(\phi \right)} \sin{\left(\theta \right)}\\\cos{\left(\theta \right)}\end{matrix}\right] \\
+    \vec{e}_\theta&=\left[\begin{matrix}\cos{\left(\phi \right)} \cos{\left(\theta \right)}\\\sin{\left(\phi \right)} \cos{\left(\theta \right)}\\- \sin{\left(\theta \right)}\end{matrix}\right] \\
+    \vec{e}_\phi&=\left[\begin{matrix}- \sin{\left(\phi \right)}\\\cos{\left(\phi \right)}\\0\end{matrix}\right] \\
+
+
+
+    \end{align*}    
+        \]
+    <p>
+        Remember that the spherical coordiante system has basis vectors that vary at different point in space. The basis vectors are coordinate-dependent
+        unlike cartesian basis vectors which are constant regardless of the position in the coordinate system.
+    </p>
+    <h3>Basis Vectors: Dual Basis</h3>
+    <p>
+        It is also possible to have a set of basis vectors which are formed using the normals to a general point rather than the tangents.
+        <br>
+        In such a case, we define the basis vectors using the gradients instead of the partial derivatives.
+        <br>
+        Here, instead of writing \(x(u,v,w),y(u,v,w),z(u,v,w)\), we write \((u,v,w)\) in terms of \((x,y,z)\):
+        \[
+        \begin{align*}  
+        u &= u(x,y,z) \\
+        v &= v(x,y,z) \\
+        w &= w(x,y,z) \\
+        \end{align*}    
+            \]
+        The basis vectors are defined by:
+
+        \[
+        \begin{align*}  
+        \vec{e}^u &= \nabla{u} = \partial_x{u} \hat{i}+\partial_y{u} \hat{j}+\partial_z{u} \hat{k}\\
+        \vec{e}^v &= \nabla{v} = \partial_x{v} \hat{i}+\partial_y{v} \hat{j}+\partial_z{v} \hat{k}\\
+        \vec{e}^u &= \nabla{w} = \partial_x{w} \hat{i}+\partial_y{w} \hat{j}+\partial_z{w} \hat{k}\\
+        \end{align*}    
+            \]
+    </p>
+
+    Note that this dual-basis uses the notation where the coordiante is indicated in the superscript rather than in the subscript.
+    <br>
+    tangent-basis are <i>covariant</i>.
+    <br>
+    dual-basis are <i>contravariant</i>.
+    <br>
+    A basis need not be orthonormal in general.
+    <div class="example-box">
+        <b><i>Example:</i></b> Define a coordinate system \((u,v,w)\) in terms of cartesian coordinates as:
+        <br>
+        \(x = u+v, \quad \quad y=u-v, \quad\quad z = 2uv+w\)
+        <br>
+        The position vector is thus given by:
+        \[
+        \begin{align*}  
+        \vec{r} &= x\hat{i}+y\hat{j}+z\hat{k} \\
+        &= (u+v)\hat{i}+(u-v)\hat{j}+(2uv+w)\hat{k}
+        \end{align*}    
+            \]
+        
+        Find the tangent (\(\vec{e}_u,\vec{e}_v,\vec{e}_w\)) and dual (\(\vec{e}^u,\vec{e}^v,\vec{e}^w\)) basis for these coordinates.
+        <br>
+        <br>
+        <b><i>Solution:</i></b>
+        <br>
+        For tangent basis, we use the tangent basis equations (using partial derivatives of a general vector) given above to get the basis vectors. We may use SymPy:
+        <br>
+        \[
+        \begin{align*}  
+        \vec{e}_u&=\left[\begin{matrix}1\\1\\2 v\end{matrix}\right] \quad \vec{e}_v=\left[\begin{matrix}1\\-1\\2 u\end{matrix}\right] \quad \vec{e}_w=\left[\begin{matrix}0\\0\\1\end{matrix}\right]
+  
+
+        \end{align*}    
+            \]
+
+        <br>
+        For dual basis, we first need \((u,v,w)\) in terms of \((x,y,z)\). We can do this easily and get:
+        \[
+        \begin{align*}  
+        u&=\frac{x}{2} + \frac{y}{2} \\
+        v&=\frac{x}{2} - \frac{y}{2} \\
+        w&=- \frac{x^{2}}{2} + \frac{y^{2}}{2} + z
+
+        \end{align*}    
+            \]
+
+        To get the dual basis, we find the gradients.
+        \[
+        \begin{align*}  
+        \vec{e}^u &= \nabla{u} = \frac{\hat{i}}{2} + \frac{\hat{j}}{2} \\
+        \vec{e}^v &=\nabla{v} = \frac{\hat{i}}{2} - \frac{\hat{j}}{2} \\
+        \vec{e}^w &=\nabla{w} =- \hat{i} x + \hat{j} y + \hat{k}
+        \\ &= - \hat{i} \left(u + v\right) + \hat{j} \left(u - v\right) + \hat{k}
+
+        \end{align*}    
+            \]
+            <center>
+                <iframe src="4smp.html" frameborder="0"></iframe>
+            </center>
+
+        </div>
+        <br>
+        <h3>Vectors using these bases</h3>
+    </div>
+    <script src="script.js"></script>
+    <script src="prism.js"></script>
+    
+
+
+</body>
+</html>
