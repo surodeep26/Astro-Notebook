@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+
+    </script>
+    <script src="calculators.js"></script>
+
+
+</head>
+<body>
+    <div id="banner">
+        <h1>Celestial Mechanics <small><i>The Two-Body Problem</i></small></h1>
+    </div>
+
+    <div id="container">
+        <div id="sidebar">
+            <a href="../index.html" style="align-items: end; color: rgb(255, 230, 118); font-family: 'Libre Baskerville', serif;">&#x1F3E0; <i>Notes Home</i></a>
+            <a href="Introduction.html">1. Introduction</a>
+            <a href="The Two-Body Problem.html">2. The Two-Body Problem</a>
+
+
+        </div>
+
+        <div id="content">
+            <h2>2.1 Equation of motion</h2>
+            <h3>One center problem</h3>
+            The <i>Restricted Two-Body Problem</i> is when one of the masses is much smaller than the other \(m\ll M\). <br>
+            Then according to Neton's law of gravitation:
+            \[
+            \begin{align*}  
+            \vec{F} = -G\frac{Mm}{r^3}\vec{r}
+            \end{align*}    
+                \]
+
+            According to Newton's 2nd law,
+            \[
+            \begin{align*}  
+            \vec{F} = m\ddot{\vec{r}}
+            \end{align*}    
+                \]
+            
+            Thus,
+            \[
+            \begin{align*}  
+            \ddot{\vec{r}}+\frac{Mm}{r^3}\vec{r} = 0
+            \end{align*}    
+                \]
+
+            <h3>Two-Body problem: relative motion</h3>
+
+            \[
+            \begin{align*}  
+            M_1 \ddot{\vec{\rho_1}} &= G\frac{M_1 M_2}{r^3}\vec{r} \\
+            M_2 \ddot{\vec{\rho_2}} &= -G\frac{M_1 M_2}{r^3}\vec{r}
+            \end{align*}    
+                \]
+            Adding these, 
+            <br>
+            \(M_1 \ddot{\vec{\rho_1}}+M_2 \ddot{\vec{\rho_2}}\) = 0
+            <br><br>
+            integrate,
+            <br><br>
+            \(M_1 \dot{\vec{\rho_1}}+M_2 \dot{\vec{\rho_2}} = \vec{A}\)
+            <br><br>
+            \(M_1 \vec{\rho_1}+M_2 \vec{\rho_2} = \vec{A}t+\vec{B}\)
+            <br><br>
+            Consider the center of mass a.k.a. barycenter of the system:
+            \[
+            \begin{align*}  
+            \vec{R} &= \frac{M_1\vec{\rho_1}+M_2\vec{\rho_2}}{M_1+M_2} \\
+            \vec{R} &= \frac{\vec{A}}{M_1+M_2}t+\frac{\vec{B}}{M_1+M_2} \\
+            \dot{\vec{R}} &=\frac{\vec{A}}{M_1+M_2}
+            \end{align*}    
+                \]
+                which means that the center of mass moves along a straight line \(\vec{R}\) at a constant speed.
+               <p>
+                    <i>Application: Sirius, the brightest star on the sky. In 1844, Friedrich Wilhelm Bessel analyzed the
+                        astrometric data and found the trajectory on Sirius on the sky to be “sine”-like. He interpreted
+                        this by a presence of an invisible companion of comparable mass. If such a companion (“Sirius
+                        B”) were present, the center of mass of Sirius A + B could be moving along a straight line. Later
+                        on, this companion was indeed discovered (by Clark, 1862). It turned out to be the first white
+                        dwarf ever discovered. White dwarfs have normal stellar masses, but much lower luminosities,
+                        which makes them faint. Sirius B has mag = 8m. This explains why the companion was not
+                        observed earlier.</i>
+               </p>
+               We can now write the equation of motion:
+               \[
+               \begin{align*}   
+               \ddot{\vec{r}} + G\frac{M_1+M_2}{r^3}\vec{r} = 0
+               \end{align*}    
+                \]
+               <h3>Barycentric equation of motion</h3>
+               fillt his
+               \[
+               \begin{align*}   
+               \ddot{\vec{r_2}} + G\frac{M_1^3(M_1+M_2)^2}{r_2^3}\vec{r_2} = 0
+               \end{align*}    
+                \]
+               <h3>Comparision</h3>
+               Comparing these equaitons, we see that they all take the same form:
+               \[
+               \begin{align*}   
+               \ddot{\vec{r}} + \kappa^2\frac{\vec{r}}{r^3} = 0
+               \end{align*}    
+                \]
+                where \(\kappa\) is a constant. \(\vec{r}\) and \(\kappa\) vary from problem to problem, but mathematically all these versions of the two body problem are the same.
+                <p>
+                    <i>
+                        These equations of motions are too complicated to solve directly. Instead, we can use 'integrals of motion'. An integral of motion is of the form $$f(t,\vec{r},\dot{\vec{r}}) = \text{const.}$$
+                    </i>
+                </p>
+
+
+            <h2>2.2 The angular momentum integral</h2>
+            Cross product of \(\vec{r}\) with equation 7 gives:
+            \[
+            \begin{align*}  
+                \vec{r} \times \ddot{\vec{r}}+\kappa^2\frac{\vec{r}\times\vec{r}}{r^3} &=0 \\
+                \text{integrating,} \\
+                \vec{r}\times\ddot{\vec{r}}&=\vec{c}
+
+            \end{align*}    
+                \]
+                This is an integral of motion. In fact, three (scalar) integrals of motion.
+
+            
+            <h2>2.3 The energy integral</h2>
+            <h2>2.4 The Laplace integral</h2>
+            <h2>2.5 Integrals in polar coordinates</h2>
+            <h2>2.6 Geometry of the orbit</h2>
+
+
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

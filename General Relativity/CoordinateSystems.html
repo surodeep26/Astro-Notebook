@@ -16,11 +16,12 @@
 </head>
 <body>
     <div id="banner">
-        <h1>General Relativity</h1>
+        <h1 style="text-align: center;">General Relativity</h1>
     </div>
 
     <div id="container">
         <div id="sidebar">
+            <a href="../index.html" style="align-items: end; color: rgb(255, 230, 118); font-family: 'Libre Baskerville', serif;">&#x1F3E0; <i>Notes Home</i></a>
             <a href="Introduction.html">1 Introduction</a>
             <a href="CoordinateSystems.html">2 Coordinate Systems</a>
 
@@ -31,7 +32,7 @@
             The second postulate of special relativity is that physical systems must remain invariant of the
             coordinate systems used to describe them. This is what we emphasise in this chapter. 
             We will consider the mathematical tools to required to study relativity.
-            <h2>Euclidean/Flat Geometry</h2>
+            <h2>Basis Vectors</h2>
             Let's first consider the cartesian coordiantes \((x,y,z)\). One might come up with another system of coordinates say \((u,v,w)\).
             Before trying to talk to our \((u,v,w)\) coordiante friends about any physical system, we must know how to convert between the two coordinates.
             <br>
@@ -194,18 +195,37 @@
         \begin{align*}  
         \vec{e}^u &= \nabla{u} = \frac{\hat{i}}{2} + \frac{\hat{j}}{2} \\
         \vec{e}^v &=\nabla{v} = \frac{\hat{i}}{2} - \frac{\hat{j}}{2} \\
-        \vec{e}^w &=\nabla{w} =- \hat{i} x + \hat{j} y + \hat{k}
+        \vec{e}^w &=\nabla{w} =- \hat{i} x + \hat{j} y + \hat{k}?.
         \\ &= - \hat{i} \left(u + v\right) + \hat{j} \left(u - v\right) + \hat{k}
 
         \end{align*}    
             \]
             <center>
-                <iframe src="4smp.html" frameborder="0"></iframe>
+                <iframe src="4smp.html" frameborder="0" style="-webkit-transform: scale(1);"></iframe>
             </center>
 
         </div>
         <br>
-        <h3>Vectors using these bases</h3>
+        <h2>Vectors</h2>
+        There are two types of vectors: <i>Covariant</i> and <i>Contravariant</i>.
+        <br>
+        Contravariant vecotrs are identified by superscripts like \(V^{\alpha}\)
+        <br>
+        Covariant vectors are isentified by subscripts like \(V_{\alpha}\)
+        <br>
+        We will see the difference between these now. We choose a set of basis vectors, for simplicity in 2D: \(\{\vec{e}_1,\vec{e}_2\}\). We define a vector \(\vec{V}\) by multiplying these basis vecotrs with components \(\{V^1,V^2\}\).
+        $$\vec{V} = V^1\vec{e}_1+V^2\vec{e}_2 = V^{\alpha}\vec{e}_{\alpha} $$
+        Here we used Einstein summation convention. <br>
+        These basis vectors need not be orthogonal or normalized in general. As long as they are not parallel to each other, they can be used to define vectors.
+        <br>
+        We have another set of vectors for a set of basis vectors: the dual-vectors \(\{\tilde{e}^1,\tilde{e}^2\}\). These are also known as one-forms. We have the components for these dual-basis as \(\{P_1,P_2\}\).
+        <br>We can thus write any vector \(\tilde{P}\) as:
+        $$\tilde{P} = \tilde{P}_1 \tilde{e}^1+\tilde{P}_2 \tilde{e}^2 = \tilde{P}_{\alpha} \tilde{e}^{\alpha}$$
+
+        <br>
+        The dual-vectors satifsy the property that they are orthogonal to the basis vectors with a different index. Mathematically,
+        $$\tilde{e}^{\alpha} \vec{e}_{\beta} = \delta^{\alpha}_{\beta}$$
+        <i>Include a diagram showing how dual basis vectors are orthogonal to normal vectors.</i>
     </div>
     <script src="script.js"></script>
     <script src="prism.js"></script>
